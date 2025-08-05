@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+/*---break---*/
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-serif: var(--font-manrope);
+    --font-heading: var(--font-orbitron);
+    --color-bg: #0B0528;
+    --color-active: #17EC20;
+    --color-accent: #17E1EC;
+    --color-error: #FF0004;
+
+    /*320 sm480 md768 lg960 xl1280 xxl1440*/
+    --breakpoint-xs: 25rem; /* 320px */
+    --breakpoint-ixs: 23rem; /* <375px */
+    --breakpoint-sm: 30rem; /* 480px */
+    --breakpoint-ism: 36rem; /* 576px */
+    --breakpoint-md: 48rem; /* 768px */
+    --breakpoint-lg: 60rem; /* 960px */
+    --breakpoint-xl: 80rem; /* 1280px */
+    --breakpoint-xxl: 90rem; /* 1440px */
+
+}
+
+@utility container {
+    margin-inline: auto;
+    padding-inline: max(0.5rem);
+    max-width: 1368px;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    /*@apply bg-bg*/
+}
+
+body {
+    @apply text-sm lg:text-[16px];
+    font-family: var(--font-serif);
+    color: #fff;
+    /*height: 900dvh;*/
+    background-color: var(--color-bg);
+    background-image: url('/genBG.png');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+
+}
+.paragraph{
+    @apply text-sm lg:text-[16px];
+    font-family: var(--font-serif);
+    color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+h1, .h1{
+    @apply font-extrabold leading-tight text-[34px] sm:text-[42px] lg:text-6xl;
+}
+
+h2, .h2{
+    @apply font-extrabold leading-tight text-[28px] sm:text-[32px] lg:text-5xl tracking-tight;
+}
+
+h4, .h4{
+    @apply font-extrabold leading-tight text-lg sm:text-[20px] lg:text-2xl;
+}
+.h4-special{
+    @apply font-extrabold leading-tight text-sm sm:text-[20px] lg:text-2xl;
+}
+
+.anchor, a {
+    @apply text-white hover:text-active active:text-accent font-heading
+}
+
+.section{
+    @apply py-8 sm:py-10 md:py-15 lg:py-20
+}
+
+.subheading{
+    @apply mb-4 sm:mb-6 lg:mb-8
+}
+
+.button{
+    @apply text-sm font-extrabold md:text-[16px] font-heading
+}
+
+input, textarea {
+    @apply bg-white/15 backdrop-blur-2xl resize-none py-4 px-6 placeholder:text-white/50 rounded-2xl outline-none text-sm lg:text-[16px]
+}
+::-webkit-scrollbar {
+    width: 4px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: oklch(40% 0.1 270 / 0.6); /* Прозрачный фиолетовый в стиле Dracula */
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: oklch(40% 0.1 270 / 0.9);
+}
+
+.longText h2{
+ @apply pb-4
+}
+.longText h4{
+   @apply pb-3 pt-5
+}
+.longText p, .longText ul, .longText h5{
+    @apply pb-2
+}
+.longText img{
+    @apply py-4
+}
+.longText h5 {
+    @apply font-heading text-active font-extrabold md:text-lg py-2
+}
+
+.longText ul{
+    @apply list-disc list-inside
+}
+.longText table{
+    @apply w-full
+}
+.longText tr, .longText td, .longText th{
+    @apply border-1 border-white
+}
+.longText td {
+    @apply px-2
+}
+.longText th:first-child{
+    @apply w-1/5
+}
+.longText td:nth-child(2):not(:last-child){
+    @apply text-center
+}

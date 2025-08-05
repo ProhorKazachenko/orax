@@ -1,0 +1,482 @@
+{
+  "common": {
+    "contact": "Contact us",
+    "years": "years",
+    "back": "Go back"
+  },
+  "Header": {
+    "management": "Asset Management",
+    "solutions": "Market Making & Liquidity Solution"
+  },
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "Footer": {
+    "CoI": "Conflict of Interest",
+    "AML": "AML",
+    "ToB": "Terms of Business",
+    "DPP": "Data Protection and Privacy Policy",
+    "RA": "Risk Assessment",
+    "Copyright": "ORAX CORPORATION LLC © All rights reserved"
+  },
+  "MainHero": {
+    "heading": "Asset Management\nwith Low Volatility",
+    "description": "Investment strategies for various purposes in any market conditions",
+    "years": "years",
+    "team": "Team experience",
+    "assets": "Assets under management",
+    "clients": "Clients trust us"
+  },
+  "Strategies": {
+    "title": "Experience-based strategies",
+    "B1Text": "Investments in cryptocurrencies with a target return of 25%+ in USDT regardless of market dynamics",
+    "S1Text": "Invest in BTC or ETH with full protection of initial capital",
+    "A1Text": "Highly Diversified Crypto Portfolio",
+    "strategy": "Strategy",
+    "other": "Other Strategies"
+  },
+  "PortfolioManagement": {
+    "title": "Effective portfolio management",
+    "1title": "Asset diversification",
+    "2title": "Algorithmic decision making",
+    "3title": "Dynamic rebalancing",
+    "4title": "Market sentiment analysis",
+    "5title": "Transparent reporting",
+    "6title": "Individual strategies",
+    "7title": "Risk-adjusted return",
+    "1description": "We invest in a wide range of assets to minimize risks and increase portfolio stability.",
+    "2description": "We use algorithms to analyze markets in real time and automate asset allocation",
+    "3description": "We regularly reallocate assets in the portfolio to achieve an optimal balance between return and risk.",
+    "4description": "We analyze the behavior of market participants to predict trends and make accurate decisions",
+    "5description": "We provide clients with regular reports on profitability and all changes in the portfolio.",
+    "6description": "We offer strategies tailored to each client's goals and risk appetite.",
+    "7description": "We focus on maximizing returns while taking into account the risk level of each asset."
+  },
+  "PortfolioRiskRating": {
+    "title": "Portfolio and Instrument Risk Rating section",
+    "description": "It is an aggregate numerical indicator of the riskiness of investments in a strategy on a scale from 1 to 7 as risk increases.",
+    "losses": "Limit losses",
+    "how": "How does this work",
+    "how1": "Risk rating is an aggregated numerical indicator of the risk of an investment opportunity. The indicator has a scale from 1 to 7, where 1 is the least likely and 7 is the greatest probability of loss.",
+    "how2": "The risk rating is calculated using the PRIIPS methodology and consists of two parts: quantitative and qualitative. The quantitative part is defined as the maximum value of Value at Risk and Stress Test",
+    "how3": "The qualitative part evaluates everything without making numerical assumptions about the product, such as liquidity and credit risk of the exchange.",
+    "methodology": "Methodology for calculating risk rating",
+    "methodologyDescription": "The list of risk factors is revised depending on the specific investment environment.",
+    "findOut": "Find out the scheme",
+    "modalText": "The list of risk is reviewed depending on the specific investment environment"
+  },
+  "AvoidRisks": {
+    "title": "How to avoid risks",
+    "description": "Our team of experienced traders and developers combine industry knowledge, quantitative analysis and innovative strategies.",
+    "problem": "Typical problem",
+    "1title": "Market risk",
+    "1problem": "The probability of losing money on a trading strategy due to changes in exchange rates",
+    "1solution": "The probability of loss is zero due to the constant holding of two opposite positions in assets, so the risk is fully hedged",
+    "2title": "Credit risk",
+    "2problem": "Probability of losses due to the realization of the exchange's credit risk",
+    "2solution": "The risk is diversified by using several crypto exchanges: ByBit, OKX, KuCoin, Binance",
+    "3title": "Cyber risk",
+    "3problem": "The likelihood of incurring losses due to the hacking of the exchange by a hacker group and the subsequent theft of funds",
+    "3solution": "The risk is reduced by using multiple exchanges with multiple sub-accounts and following all cybersecurity rules.",
+    "4title": "Stress tests",
+    "4problem": "The market can crash suddenly and many strategies cannot withstand extreme situations.",
+    "4solution": "We run portfolios through disaster scenarios to predict the worst outcomes.",
+    "5title": "Volatility assessment",
+    "5problem": "Sharp price swings in cryptocurrencies make some strategies more difficult to implement and increase the profitability of others.",
+    "5solution": "We use volatility forecasting models to manage risk",
+    "6title": "Hedging Strategies",
+    "6problem": "Macroeconomic factors influence cryptocurrency markets",
+    "6solution": "We use futures and options contracts to offset potential losses."
+  },
+  "HowMakeMoney": {
+    "title": "How to make money",
+    "strategy": "Choosing a Strategy",
+    "strategy1": "We agree on the terms of placement and the amount of funds",
+    "strategy2": "We select a strategy for your goals",
+    "documents": "Signing documents",
+    "documents1": "You read the terms of the agreement",
+    "documents2": "We sign the agreement, in which we indicate the addresses of the sender (yours) and the recipient (our)",
+    "legal": "Legal review",
+    "legal1": "We check the sources of origin of funds (SoF)",
+    "legal2": "We verify your personal data (KYC)",
+    "legal3": "We check your address for compliance with anti-money laundering and counter-terrorism (AML) legislation",
+    "launch": "Launch strategy",
+    "launch1": "You transfer funds to the orax-assets.com address according to the agreement",
+    "launch2": "Launching a trading strategy",
+    "results": "Getting Results",
+    "results1": "We achieve target revenue according to strategy and report regularly",
+    "withdraw": "Withdrawal of funds",
+    "withdrawDescription": "After the end of the placement period, you withdraw funds to your address (according to the agreement) or continue to place funds",
+    "funds": "Funds can be withdrawn early",
+    "fundsDescription": "To do this, simply submit a request to withdraw funds after the funds freeze period has expired (3 months)."
+  },
+  "Team": {
+    "title": "Team ORAX CORPORATION LLC",
+    "sergey": "Sergey Smotrov",
+    "sergeyDescription": "22 years of experience in brokerage, market making, hedge funds, speculative trading, asset management",
+    "since": "Since 2009",
+    "sinceDescription": "We have been operating in the market since 2009, providing reliable and experienced services to our clients.",
+    "transparency": "Transparency \nand trust",
+    "transparencyDescription": "We prioritise transparency by providing regular reports and maintaining open communication, ensuring you are always informed about your investments.",
+    "individual": "Individual approach",
+    "individualDescription": "In addition to time-tested strategies, we create personalized asset management plans that match your goals and risk level.",
+    "innovative": "Innovative Technologies",
+    "innovativeDescription": "Using advanced algorithms and the latest technology, we are constantly improving our investment strategies to ensure consistent results even in highly volatile markets."
+  },
+  "Form": {
+    "title": "Contact us",
+    "description": "We will contact you within one business day",
+    "name": "Name",
+    "email": "Phone or email",
+    "message": "Message",
+    "send": "Send",
+    "policyPre": "By clicking the “Send” button, you agree to the",
+    "policy": "Data Protection and Privacy Policy",
+    "nameError": "Invalid name",
+    "emailError": "Incorrect email or phone number",
+    "formError": "Oops! Something went wrong while submitting the form."
+  },
+  "s1": {
+    "hero": {
+      "title": "Structured Investment Product S1",
+      "description": "Investments in BTC or ETH with full protection of initial capital",
+      "risk": "Risk level: 1 (low)",
+      "profitability": "Profitability up to 130% of Asset Price Growth (with capital protection)"
+    },
+    "TermSheet": {
+      "title": "Term sheet",
+      "part": "Participation Conditions",
+      "minimum": "Minimum Investment Amount",
+      "holding": "Holding Period",
+      "plan": "According to the chosen plan",
+      "exit": "Early exit return amount depends on the current asset price",
+      "instruments": "Investment instruments",
+      "instrument1": "Digital currency",
+      "instrument2": "Market cap > $1 billion",
+      "instrument3": "Average 24h trading volume > $100 million",
+      "risk": "Risk profile",
+      "riskDesk": "(Risk Rating: 1 – Low)",
+      "risk1": "No leverage",
+      "risk2": "Strategy capacity > $500 million",
+      "risk3": "No drawdown",
+      "specification": "Strategy specification",
+      "specification1": "Delta Neutral",
+      "specification2": "Uses derivatives",
+      "specification3": "Direct exposure to Underlying assets on spot markets",
+      "data1title": "Class and type",
+      "data1description": "Structured Product S1",
+      "data2title": "Investors",
+      "data2description": "Private and institutional",
+      "data3title": "Assets",
+      "data3description": "Spots, Options and Futures on centralized exchanges",
+      "data4title": "Exchanges",
+      "data4description": "Binance, ByBit, Derebit, OKX",
+      "lockup": "Lock-up",
+      "lockupValue": "3&nbsp;months",
+      "withdrawal": "Withdrawal Notice",
+      "withdrawalValue": "1&nbsp;month",
+      "entry": "Entry threshold",
+      "entryValue": "2&nbsp;%",
+      "success": "Success fee based on High Water Mark",
+      "successValue": "20%",
+      "management": "Management fee",
+      "managementValue": "2%",
+      "hurdle": "Hurdle rate",
+      "hurdleValue": "12%"
+    },
+    "Profit": {
+      "title": "Want to profit from the growth of Bitcoin or Ethereum but don't want to risk it?",
+      "description": "We have developed a tool that allows you to benefit from growth while avoiding losses if the asset price falls"
+    },
+    "Earning": {
+      "title": "Earnings and Capital Protection: Scenarios",
+      "positive": "Positive scenario",
+      "positiveDescription": "The underlying asset's value grew by the end of theinvestment period",
+      "negative": "Negative scenario",
+      "negativeDescription": "The underlying asset's value fell by the end of theinvestment period"
+    },
+    "Plans": {
+      "title": "Investment Plans"
+    },
+    "FAQ": {
+      "title": "FAQs",
+      "question1": "Can I exit the strategy before the term ends?",
+      "question2": "How to track the strategy balance?",
+      "question3": "How is 100% investment return ensured?",
+      "question4": "Can I extend the contract?",
+      "question5": "Can I top up an already working strategy?",
+      "answer1": "You can exit the strategy after the lock-up period (3 months). Notify us one month in advance. The strategy balance at the time of exit may be lower than the initial amount. Full protection works only when funds are placed for the entire investment period. A 2% fee of the initial investment amount will also be deducted.",
+      "answer2": "You can track the strategy balance through your personal manager by phone, Telegram, and in the investor's personal account on the website.",
+      "answer3": "The return is ensured through structuring investments in derivatives and a market-neutral strategy in different proportions.",
+      "answer4": "You can extend the contract if you leave an amount greater than $100,000 in the account after the strategy ends. We will sign an additional agreement for continued investment.",
+      "answer5": "Top-up is possible by signing an additional agreement with a new investment period."
+    }
+  },
+  "a1": {
+    "hero": {
+      "title": "Investment Product A1",
+      "description": "Investing in the crypto market according to modern portfolio theory",
+      "risk": "Risk rating: 5 (medium)",
+      "profitability": "Expected profitability of the strategy is 200-300% per annum"
+    },
+    "Description": {
+      "title": "The Strategy A1",
+      "description1": "A1 is an investment portfolio that includes the top 10 cryptocurrencies by market capitalization. The weight of assets in the index corresponds to Markovets' theory of optimal portfolio.",
+      "description2": "The portfolio is updated monthly depending on changes in market factors. The selection of new assets is based on their volatility and trend strength.",
+      "odds": "Odds",
+      "subOdds": "All calculations from 2024",
+      "profitability": "Profitability (year)",
+      "profitabilityValue": "94 %",
+      "sharpe": "Sharpe",
+      "sharpeValue": "2.17",
+      "drawdown": "Maximum drawdown",
+      "drawdownValue": "-33 %",
+      "rebalancing": "Rebalancing period",
+      "rebalancingValue": "1 month",
+      "var": "Var (historical, 1 day)",
+      "varValue": "- 5 %",
+      "expected": "Maximum expected drawdown per day"
+    },
+    "Comparison": {
+      "title": "Comparison of A1 profitability with the benchmark",
+      "description1": "Portfolio A1 outperforms the benchmark in terms of profitability over the entire period of time.",
+      "description2": "Bitcoin risk is much higher than a diversified portfolio.",
+      "description3": "A balanced portfolio is less susceptible to market shocks."
+    },
+    "PortfolioStrategy": {
+      "title": "Portfolio Management Strategy",
+      "data1title": "Selection obligations",
+      "data1description": "The management company assumes all obligations for the selection, search for the moment of optimal entry and exit, as well as rebalancing of coins in the portfolio",
+      "data2title": "Rebalancing",
+      "data2description": "Rebalancing is carried out monthly",
+      "data3title": "Coin weights",
+      "data3description": "The weights of coins in a portfolio depend on the latest historical returns and market risk of the portfolio",
+      "data4title": "Investment period",
+      "data4description": "The recommended investment period is 1 year",
+      "titleSecondary": "The essence of portfolio theory"
+    }
+  },
+  "b1": {
+    "hero": {
+      "title": "Market Neutral Strategy B1",
+      "description": "Investments in cryptocurrencies with a maximum yield of 25%+ in USDT regardless of market dynamics",
+      "risk": "Risk level: 1 (low)"
+    },
+    "Conditions": {
+      "title": "List of conditions",
+      "target": "Target return",
+      "interest": "25% + annual interest in USDT",
+      "instruments": "Investment instruments",
+      "instrument1": "Digital currency",
+      "instrument2": "Capitalization more than $100 mln",
+      "instrument3": "Average volume 24h more than $10 mln",
+      "risk": "Risk profile",
+      "risk1": "No leverage",
+      "risk2": "Capacity strategy $100 mln (liquidity capacity)",
+      "risk3": "Max drawdown under 5%",
+      "specification": "Strategy specification",
+      "spec1": "Delta Neutral",
+      "spec2": "Exposition via Derivative products",
+      "spec3": "Investment horizon is unlimited for each asset group",
+      "spec4": "The resulting free funds are reinvested with floating rate",
+      "spec5": "The performance of strategy is related to the efficiency and trade volume on Centralised Exchange",
+      "data1title": "Class and type",
+      "data1description": "Delta Neutral (B1)",
+      "data2title": "Investors",
+      "data2description": "Private and institutional",
+      "data3title": "Classification",
+      "data3description": "Market neutral strategy",
+      "data4title": "Exchanges",
+      "data4description": "Binance, ByBit, KuCoin, OKX",
+      "lockup": "Lock-up",
+      "lockupValue": "3 months",
+      "withdrawal": "Withdrawal Notice",
+      "withdrawalValue": "1 month",
+      "entry": "Entry threshold",
+      "entryValue": "$100 K",
+      "success": "Success fee based on High Water Mark",
+      "successValue": "20%",
+      "management": "Management fee",
+      "managementValue": "3%",
+      "hurdle": "Hurdle rate",
+      "hurdleValue": "3%"
+    },
+    "Product": {
+      "title": "B1 Investment Product: APY&nbsp;Review"
+    },
+    "TrackRecord": {
+      "title": "Track Record",
+      "title1": "Growth in portfolio value",
+      "title2": "Historical profitability",
+      "description2": "The principle of operation of the strategy is based on the arbitration of perpetual futures for crypto currency on centralized crypto exchanges",
+      "shadowed": "Profit is earned due to the difference in the value and rates of perpetual futures"
+    },
+    "Profitability": {
+      "title": "The Profitability of the Strategy in Different Scenarios",
+      "positive": "Positive scenario",
+      "negative": "Negative scenario",
+      "stress": "Stress scenario",
+      "neutral": "Neutral scenario",
+      "180": "After 180 days",
+      "365": "After 365 days"
+    },
+    "Glossary": {
+      "title": "Glossary",
+      "1title": "Financing rate",
+      "1description": "The rate paid by perpetual holders futures to holders of the opposite position depending on the sign of the bet",
+      "2title": "Stress scenario",
+      "2description": "The probability of losses is associated with extreme factors such as the closure of one of the exchanges",
+      "3title": "Perpetual futures",
+      "3description": "Futures that do not have an expiration date",
+      "4title": "Losses",
+      "4description": "Maximum possible losses according to the strategy"
+    },
+    "Risks": {
+      "title": "How to avoid risks",
+      "chip": "Risk of occurrence",
+      "1title": "Market risk",
+      "2title": "Credit risk",
+      "3title": "Cyber ​​risk",
+      "4title": "Interest Rate Risk",
+      "1risk": "The probability of making a loss on a trading strategy due to changes in exchange rates",
+      "1solution": "Probability of loss is equal to zero due to continuous holding two opposite position in assets, so risk is fully hedged",
+      "2risk": "The probability of incurring losses due to the realization of the exchange's credit risk",
+      "2solution": "The risk is diversified with usage several crypto exchanges: ByBit, OKX, KuCoin, Binance",
+      "3risk": "The probability of incurring losses due to hacking of the exchange by a hacker group and subsequent theft of funds",
+      "3solution": "Risk is mitigated by using a number of exchanges with several subaccounts and adhering to all cybersecurity rules",
+      "4risk": "The probability of incurring losses due to unfavorable funding rates or increased commission costs",
+      "4solution": "The strategy avoids situations of negative interest rates"
+    },
+    "InterestRates": {
+      "title": "The strategy avoids situations of negative interest rates",
+      "description": "The list of risk is reviewed depending on the specific investment environment"
+    }
+  },
+  "market": {
+    "hero": {
+      "title": "Market Making & Liquidity Solution",
+      "description": "We attract active traders to your project by creating a market, rather than just presenting numbers",
+      "exp": "Team experience",
+      "growth": "Growth in trading capacity of our clients",
+      "capitalization": "Customers market capitalization"
+    },
+    "MarketResults": {
+      "title": "Achieve Results",
+      "description": "Our team of experienced traders and developers combines industry knowledge, quantitative analysis, and innovative strategies",
+      "making": "Market Making",
+      "off": "In Off",
+      "on": "In Action"
+    },
+    "MarketAiMaking": {
+      "title": "Ultimate AI-based Market Making",
+      "description": "Web3 technologies for sustainable growth of the cryptocurrency market making and capitalization of your token",
+      "chip": "Typical Market Maker",
+      "1title": "Order placing",
+      "2title": "Trading Account Balance",
+      "3title": "Trend Line Analysis",
+      "4title": "Capacity",
+      "5title": "New Listings",
+      "6title": "Watchlists & Ratings",
+      "1marker": "Artificially flat and simple self-duplicatable",
+      "1solution": "AI based market & organic trends follower",
+      "2marker": "Constant fiat balance melting & bot suspension",
+      "2solution": "Smart order book management without significant trading account balance drawdown",
+      "3marker": "Not available or simple buying/selling (non-refundable charges)",
+      "3solution": "Trend formation considers technical analysis strategies (return charges)",
+      "4marker": "Rarely available",
+      "4solution": "Continuous capacity increase by organic traders attraction",
+      "5marker": "Only listings on low-ranking exchanges",
+      "5solution": "Make your token appealing to tier 1 and 2 exchanges for it to be listed",
+      "6marker": "No focus on reputation development",
+      "6solution": "CoinMarketCap and CoinGecko ratings token natural growth"
+    },
+    "MarketStudyCases": {
+      "title": "Study Cases",
+      "description": "Explore the stories of how we've empowered clients across diverse industries to navigate the complexities of financial markets",
+      "rank": "Token Rank",
+      "capitalization": "Market Capitalization",
+      "performance": "Token Performance"
+    },
+    "MarketIngredients": {
+      "title": "The Ingredients for Our Clients Success",
+      "1title": "Deep order book and tight spread",
+      "1description": "For example, if the trading limit is 1 million US dollars and the security deposit is 30%, then the security deposit will be 300 thousand US dollars (set individually after registration).",
+      "2title": "Smart liquidity management",
+      "2description": "Actively managing trading volumes increases market confidence and ratings, attracting new traders and audiences to your product.",
+      "3title": "Dump and pump protection",
+      "3description": "The absence of price spikes indicates the maturity of the market and further growth of trust in tokens\nOur company monitors token price manipulations 24/7, protecting the reputation of the token.",
+      "4title": "Trend Analytics",
+      "4description": "Algorithmic forecasting of market trends allows for intelligent management of market depth",
+      "5title": "Personal trading team",
+      "5description": "Trading team offers 24/7 accessibility and management of tokens for the client\nOver-the-counter settlements are possible\nToken buyback or cashing out at the target price level",
+      "6title": "Balance drawdown protection",
+      "6description": "Setting Drawdown Limits\nPerformance Dashboard\nTelegram Notifications\nWeekly Report",
+      "7title": "Legal consulting",
+      "7description": "Experts in strategic and management consulting offer modern business solutions to companies operating in the new digital economy."
+    },
+    "MarketBenefits": {
+      "title": "Benefits for Token Community",
+      "1title": "Attract a New Audience",
+      "11li": "A smart increase in liquidity and the formation of a deep order book attract new traders",
+      "12li": "Watchlists and intelligent screeners include your token, allowing new traders to enter your market as a result",
+      "13li": "Part of the new token audience converts to your user base",
+      "2title": "Increase in Current Audience Loyalty",
+      "21li": "Your users follow your project and keep up with the increase",
+      "22li": "The growing attention to your token forms a better resistance level, which prevents price drops",
+      "23li": "More users become long-term investors and show maximum loyalty to your project"
+    },
+    "MarketExchanges": {
+      "title": "Supported 100+ Exchanges"
+    },
+    "MarketCryptoLiquidity": {
+      "title": "Crypto Liquidity",
+      "1title": "Settelment",
+      "11li": "Send us a settlement request either via API",
+      "12li": "Daily settlements are not mandatory (we are flexible to roll over your open positions) unless that is what your business model needs",
+      "13li": "May settle numerous times per day but please bear in mind minimum withdrawal limits (e.g., BTC settlement starts from 10K USD)",
+      "14li": "Crypto settlements are automated and can be done 24/7. In most cases, it takes us less than 15 minutes to make a delivery",
+      "link": "Scheme for Exchange",
+      "2title": "Limits & Security Deposit",
+      "2description": "For example, if the trading limit is $1M and security deposit 30%, then the security deposit will be $300k (set individually after onboarding)",
+      "3title": "Cross-Currency Trading",
+      "3description": "The ability to trade cross pairs with a security deposit in stablecoins (for example: BTC/ETH, ETH/BNB)"
+    },
+    "MarketIntegration": {
+      "title": "Integration Process",
+      "1title": "Onboarding & Initial Analysis",
+      "11li": "Indicating client’s needs and targets",
+      "12li": "Analysis of key project metrics",
+      "13li": "Individual offer preparation if needed",
+      "2title": "Settings",
+      "21li": "Setup of exchanges accounts with needed liquidity",
+      "22li": "Final approval on trading strategies and reporting standards",
+      "3title": "Launch",
+      "31li": "Gradual start of market making activities with constant update according to client needs",
+      "3d": "Up to 3 days",
+      "2d": "Up to 2 days",
+      "6d": "Up to 6 days"
+    },
+    "Modals": {
+      "before": "Before",
+      "CMC": "CMC Rank",
+      "marketCap": "MarketCap",
+      "volume": "Volume 24h",
+      "capacity": "Capacity 24h",
+      "confidence": "Confidence",
+      "sync": "Market synchronization",
+      "screener": "Smart screener for algotrading",
+      "exchanges": "Exchanges",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "moderate": "Moderate",
+      "available": "Available",
+      "notAvailable": "Not available",
+      "holders": "Holders",
+      "highSense": "High sensitivity",
+      "performance": "Performance"
+    }
+  }
+
+}
