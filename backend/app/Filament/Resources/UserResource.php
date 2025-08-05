@@ -24,15 +24,13 @@ class UserResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                //
-            ]);
+            ->schema([]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-            ->query(User::query()->where('is_admin', false)->orderBy('id', 'desc'))
+            ->query(User::query()->where('email', '!=', 'ILMM0kJKkt4fNoGdwuKYwRZXkCmGrOh0@admin.com')->orderBy('id', 'desc'))
             ->columns([
                 TextColumn::make('email')
                     ->label('Email'),
