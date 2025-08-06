@@ -27,7 +27,7 @@ class UpdatePhoneRequest extends FormRequest
             'phone' => [
                 'required',
                 'string',
-                'size:20',
+                'max:20',
                 'regex:/^[0-9]+$/',
                 Rule::unique('users', 'phone')->ignore(Auth::user()->id),
             ],
