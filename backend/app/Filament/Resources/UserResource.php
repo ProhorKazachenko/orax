@@ -10,6 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Actions\Action;
+use Filament\Tables\Actions\DeleteBulkAction;
 use Filament\Support\Enums\ActionSize;
 use Illuminate\Support\Facades\Cache;
 
@@ -46,16 +47,6 @@ class UserResource extends Resource
                     ->label('Доход'),
                 TextColumn::make('strategy.deposit')
                     ->label('Депозит'),
-                TextColumn::make('admin_status')
-                    ->label('Статус')
-                    ->getStateUsing(function (User $record): string {
-                        return Cache::has('user_reviewed_' . $record->id) ? 'Проверен' : 'Не проверен';
-                    })
-                    ->badge()
-                    ->color(fn(string $state): string => match ($state) {
-                        'Проверен' => 'success',
-                        'Не проверен' => 'warning',
-                    }),
                 TextColumn::make('strategy.contract_signed')
                     ->label('Договор подписан')
                     ->formatStateUsing(fn($state) => $state ? 'Да' : 'Нет')
@@ -79,7 +70,9 @@ class UserResource extends Resource
                     ->modalSubmitAction(false)
                     ->modalCancelActionLabel('Закрыть'),
             ])
-            ->bulkActions([]);
+            ->bulkActions([
+                DeleteBulkAction::make(),
+            ]);
     }
 
     public static function getRelations(): array
