@@ -4,7 +4,7 @@
 
 Before starting, make sure the server has:
 
-- **Node.js** (recommended LTS version, e.g. `18.x`)
+- **Node.js** (recommended LTS version, 18.18 or later.)
 - **npm** or **yarn**
 - **Git**
 - Terminal access with a user that has permission to run and edit files
