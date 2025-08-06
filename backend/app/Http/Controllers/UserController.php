@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\User\UpdatePhoneRequest;
-use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
 {
@@ -28,6 +27,8 @@ class UserController extends Controller
         $user = Auth::user();
         $strategy = $user->strategy;
         $remaining_term = intval(now()->diffInDays($strategy->remaining_term));
+        $is_reviewed = Cache::has('user_reviewed_' . $user->id);
+
 
         return response()->json([
             'phone' => $user->phone,
@@ -36,6 +37,7 @@ class UserController extends Controller
             'deposit' => $strategy->deposit,
             'start_of_deposit' => $strategy->start_of_deposit,
             'remaining_term' => $remaining_term,
+            'is_reviewed' => $is_reviewed,
         ], 200);
     }
 }
