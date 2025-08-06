@@ -37,6 +37,7 @@ class UserResource extends Resource
             ->columns([
                 TextColumn::make('email')
                     ->label('Email')
+                    ->searchable()
                     ->limit(30),
                 TextColumn::make('phone')
                     ->searchable()
