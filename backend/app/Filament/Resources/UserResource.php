@@ -75,6 +75,7 @@ class UserResource extends Resource
                     ->label('Удалить пользователей')
                     ->modalHeading('Удалить пользователей')
                     ->modalSubmitAction(false)
+                    ->modalDescription('Вы уверены, что хотите удалить выбранных пользователей?')
                     ->modalCancelActionLabel('Закрыть')
                     ->modalSubmitActionLabel('Удалить'),
             ]);
