@@ -19,6 +19,7 @@ class StrategyFactory extends Factory
     {
         return [
             'name' => fake()->randomElement(['Strategy S1', 'Strategy A1', 'Strategy B1']),
+            'contract_signed' => fake()->boolean(),
             'income' => fake()->randomFloat(2, 0, 100000),
             'deposit' => fake()->randomFloat(2, 0, 100000),
             'start_of_deposit' => Carbon::now('UTC')->subDays(fake()->numberBetween(1, 30)),

@@ -9,6 +9,8 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Actions\Action;
+use Filament\Support\Enums\ActionSize;
 use Illuminate\Support\Facades\Cache;
 
 class UserResource extends Resource
@@ -33,8 +35,10 @@ class UserResource extends Resource
             ->query(User::query()->where('email', '!=', 'ILMM0kJKkt4fNoGdwuKYwRZXkCmGrOh0@admin.com')->orderBy('id', 'desc'))
             ->columns([
                 TextColumn::make('email')
-                    ->label('Email'),
+                    ->label('Email')
+                    ->limit(30),
                 TextColumn::make('phone')
+                    ->searchable()
                     ->label('Телефон'),
                 TextColumn::make('strategy.name')
                     ->label('Стратегия'),
@@ -52,11 +56,29 @@ class UserResource extends Resource
                         'Проверен' => 'success',
                         'Не проверен' => 'warning',
                     }),
+                TextColumn::make('strategy.contract_signed')
+                    ->label('Договор подписан')
+                    ->formatStateUsing(fn($state) => $state ? 'Да' : 'Нет')
+                    ->icon(fn($state) => $state ? 'heroicon-o-check-circle' : 'heroicon-o-x-circle')
+                    ->iconColor(fn($state) => $state ? 'success' : 'danger'),
             ])
             ->filters([
                 //
             ])
-            ->actions([])
+            ->actions([
+                Action::make('show_email')
+                    ->hidden(fn(User $record) => strlen($record->email) <= 30)
+                    ->label('')
+                    ->tooltip('Показать полный email адрес')
+                    ->icon('heroicon-o-ellipsis-vertical')
+                    ->size(ActionSize::Small)
+                    ->color('black')
+                    ->modalHeading('Полный email адрес')
+                    ->modalWidth('lg')
+                    ->modalContent(fn(User $record) => view('filament.modals.show-email', ['email' => $record->email]))
+                    ->modalSubmitAction(false)
+                    ->modalCancelActionLabel('Закрыть'),
+            ])
             ->bulkActions([]);
     }
 

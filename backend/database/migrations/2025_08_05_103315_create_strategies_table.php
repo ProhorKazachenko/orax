@@ -15,6 +15,8 @@ return new class extends Migration
         Schema::create('strategies', function (Blueprint $table) {
             $table->id();
             $table->enum('name', ['Strategy S1', 'Strategy A1', 'Strategy B1']);
+            $table->boolean('contract_signed')
+                ->default(false);
             $table->decimal('income', 10, 2);
             $table->decimal('deposit', 10, 2);
             $table->foreignIdFor(User::class)

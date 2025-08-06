@@ -29,12 +29,13 @@ class UserController extends Controller
         $remaining_term = intval(now()->diffInDays($strategy->remaining_term));
         $is_reviewed = Cache::has('user_reviewed_' . $user->id);
 
-
         return response()->json([
             'phone' => $user->phone,
+            'email' => $user->email,
+            'contract_signed' => $strategy->contract_signed,
             'strategy_name' => $strategy->name,
-            'income' => $strategy->income,
-            'deposit' => $strategy->deposit,
+            'income' => floatval($strategy->income),
+            'deposit' => floatval($strategy->deposit),
             'start_of_deposit' => $strategy->start_of_deposit,
             'remaining_term' => $remaining_term,
             'is_reviewed' => $is_reviewed,

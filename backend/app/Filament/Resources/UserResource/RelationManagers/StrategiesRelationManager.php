@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\UserResource\RelationManagers;
 
 use Filament\Forms\Form;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
@@ -65,6 +66,10 @@ class StrategiesRelationManager extends RelationManager
                         };
                     }
                 ]),
+            Toggle::make('contract_signed')
+                ->label('Договор подписан')
+                ->required()
+                ->columnSpanFull(),
         ]);
     }
 
@@ -76,6 +81,9 @@ class StrategiesRelationManager extends RelationManager
             TextColumn::make('deposit')->numeric(2)->label('Депозит'),
             TextColumn::make('start_of_deposit')->dateTime('d.m.Y H:i')->label('Начало вклада'),
             TextColumn::make('remaining_term')->dateTime('d.m.Y H:i')->label('Остаток срока'),
+            TextColumn::make('contract_signed')
+                ->label('Договор подписан')
+                ->formatStateUsing(fn($state) => $state ? 'Да' : 'Нет'),
         ])
             ->headerActions([])
             ->actions([

@@ -12,6 +12,7 @@ class Strategy extends Model
 
     protected $fillable = [
         'name',
+        'contract_signed',
         'income',
         'deposit',
         'start_of_deposit',
