@@ -88,7 +88,7 @@ h4, .h4{
 }
 
 input, textarea {
-    @apply bg-white/15 backdrop-blur-2xl resize-none py-4 px-6 placeholder:text-white/50 rounded-2xl outline-none text-sm lg:text-[16px]
+    @apply bg-white/15 backdrop-blur-2xl resize-none py-4 px-6 placeholder:text-white/50 rounded-2xl outline-none text-sm lg:text-[16px] disabled:opacity-70
 }
 ::-webkit-scrollbar {
     width: 4px;

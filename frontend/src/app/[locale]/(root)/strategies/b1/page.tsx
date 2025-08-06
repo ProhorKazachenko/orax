@@ -7,6 +7,7 @@ import { B1Glossary } from '@/components/pages/b1/B1Glossary'
 import { B1Risks } from '@/components/pages/b1/B1Risks'
 import { B1InterestRates } from '@/components/pages/b1/B1InterestRates'
 import { Strategies } from '@/components/Strategies'
+// TODO: Desktop, TRANSLATION
 const BOnePage = () => {
   return (
     <div className='xs:bg-[right_100px] xxl:bg-size-[800px] xxl:bg-[right_top] ism:bg-size-[70%] bg-[url(/picHero.png)] bg-contain bg-[right_130px] bg-no-repeat sm:bg-[right_top] md:bg-size-[90%] md:bg-[right_130px] lg:bg-size-[80%] xl:bg-size-[65%] xl:bg-[right_top]'>

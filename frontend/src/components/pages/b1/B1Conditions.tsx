@@ -3,6 +3,7 @@ import Image from 'next/image'
 import conditions from '@/assets/image/b1/Listofconditions.svg'
 import { Divider } from '@/components/ui/Divider'
 import { useTranslations } from 'next-intl'
+/* TODO: Desktop */
 
 export const B1Conditions = () => {
   const t = useTranslations('b1.Conditions')

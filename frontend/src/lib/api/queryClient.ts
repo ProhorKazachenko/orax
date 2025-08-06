@@ -16,11 +16,21 @@ function makeQueryClient() {
 
 let browserQueryClient: QueryClient | undefined = undefined
 
-export function getQueryClient() {
-  if (isServer) {
-    return makeQueryClient()
-  } else {
-    if (!browserQueryClient) browserQueryClient = makeQueryClient()
+const globalForServer = globalThis as unknown as {
+  __queryClient?: QueryClient
+}
+
+export function getQueryClient(): QueryClient {
+  if (!isServer) {
+    if (!browserQueryClient) {
+      browserQueryClient = makeQueryClient()
+    }
     return browserQueryClient
   }
+
+  if (!globalForServer.__queryClient) {
+    globalForServer.__queryClient = makeQueryClient()
+  }
+
+  return globalForServer.__queryClient
 }

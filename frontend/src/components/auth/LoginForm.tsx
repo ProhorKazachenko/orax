@@ -6,6 +6,8 @@ import { valibotResolver } from '@hookform/resolvers/valibot'
 import { useForm } from 'react-hook-form'
 import * as v from 'valibot'
 import { UIInput } from '@/components/ui/UIInput'
+import { useState } from 'react'
+import { useLoginUser } from '@/lib/api/user/user.mutations'
 
 interface FormData {
   email: string
@@ -21,6 +23,16 @@ const schema = v.object({
 })
 
 export const LoginForm = () => {
+  const [formError, setFormError] = useState<boolean | string>(false)
+  const loginMutation = useLoginUser({
+    onError: (error) => {
+      if (error.status === 404 || error.status === 401) {
+        setFormError('Incorrect email or password')
+        return
+      }
+      setFormError(true)
+    },
+  })
   const {
     register,
     formState: { errors },
@@ -30,7 +42,8 @@ export const LoginForm = () => {
   })
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
+    setFormError(false)
+    loginMutation.mutate(data)
   }
 
   return (
@@ -49,6 +62,7 @@ export const LoginForm = () => {
           autoComplete={'email'}
           error={errors.email?.message}
           wrapperClassName={'w-full'}
+          disabled={loginMutation.isPending}
         />
         <PasswordInput
           placeholder={'Create a password'}
@@ -56,7 +70,15 @@ export const LoginForm = () => {
           autoComplete={'new-password'}
           error={errors.password?.message}
           wrapperClassName={'w-full'}
+          disabled={loginMutation.isPending}
         />
+        {formError && (
+          <p className={'text-error mt-1'}>
+            {typeof formError === 'string'
+              ? formError
+              : 'Oops! Something went wrong while submitting the form.'}
+          </p>
+        )}
         <div className={'w-full text-end'}>
           <Link
             href={'/auth/forgot'}
@@ -68,7 +90,9 @@ export const LoginForm = () => {
       </div>
 
       <div className={'flex flex-col gap-4 pt-5 md:items-start'}>
-        <UIButton type={'submit'}>Login</UIButton>
+        <UIButton type={'submit'} disabled={loginMutation.isPending}>
+          Login
+        </UIButton>
       </div>
     </form>
   )

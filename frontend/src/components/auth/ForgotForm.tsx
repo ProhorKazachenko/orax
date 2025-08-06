@@ -6,6 +6,7 @@ import * as v from 'valibot'
 import { UIInput } from '@/components/ui/UIInput'
 import { useState } from 'react'
 import { ForgotSuccess } from '@/components/auth/ForgotSuccess'
+import { useRequestPasswordReset } from '@/lib/api/user/user.mutations'
 
 interface FormData {
   email: string
@@ -16,7 +17,15 @@ const schema = v.object({
 
 export const ForgotForm = () => {
   const [isSuccess, setIsSuccess] = useState(false)
-
+  const [isError, setIsError] = useState(false)
+  const requestResetMutation = useRequestPasswordReset({
+    onError: () => {
+      setIsError(true)
+    },
+    onSuccess: () => {
+      setIsSuccess(true)
+    },
+  })
   const {
     register,
     formState: { errors },
@@ -27,8 +36,9 @@ export const ForgotForm = () => {
   })
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
-    setIsSuccess(true)
+    setIsSuccess(false)
+    setIsError(false)
+    requestResetMutation.mutate(data)
   }
 
   if (isSuccess) {
@@ -57,11 +67,17 @@ export const ForgotForm = () => {
           autoComplete={'email'}
           error={errors.email?.message}
           wrapperClassName={'w-full'}
+          disabled={requestResetMutation.isPending}
         />
+        {isError && (
+          <p className={'text-error mt-1'}>Oops! Something went wrong while submitting the form.</p>
+        )}
       </div>
 
       <div className={'flex flex-col gap-4 pt-5 md:items-start'}>
-        <UIButton type={'submit'}>Send</UIButton>
+        <UIButton type={'submit'} disabled={requestResetMutation.isPending}>
+          Send
+        </UIButton>
       </div>
     </form>
   )

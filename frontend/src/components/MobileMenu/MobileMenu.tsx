@@ -5,6 +5,7 @@ import classes from './mobilemenu.module.css'
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { useSelfData } from '@/lib/api/user/user.queries'
 
 export const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,6 +13,7 @@ export const MobileMenu = () => {
   const t = useTranslations('Header')
   const locale = useLocale()
   const pathname = usePathname()
+  const { data: user } = useSelfData()
 
   useEffect(() => {
     if (isOpen) {
@@ -67,13 +69,24 @@ export const MobileMenu = () => {
                 >
                   {t('solutions')}
                 </Link>
-                <Link
-                  href={'/auth'}
-                  className={clsx({ '!text-accent': pathname.includes('/auth') })}
-                  onClick={() => setIsOpen(false)}
-                >
-                  Authorization
-                </Link>
+                {!user && (
+                  <Link
+                    href={'/auth'}
+                    className={clsx({ '!text-accent': pathname.includes('/auth') })}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Authorization
+                  </Link>
+                )}
+                {user && (
+                  <Link
+                    href={'/account'}
+                    className={clsx({ '!text-accent': pathname.includes('/account') })}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Authorization
+                  </Link>
+                )}
               </div>
             </div>
           </div>,

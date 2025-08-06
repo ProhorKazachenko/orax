@@ -6,6 +6,8 @@ import { valibotResolver } from '@hookform/resolvers/valibot'
 import { useForm } from 'react-hook-form'
 import * as v from 'valibot'
 import { UIInput } from '@/components/ui/UIInput'
+import { useRegisterUser } from '@/lib/api/user/user.mutations'
+import { useState } from 'react'
 
 interface FormData {
   email: string
@@ -37,6 +39,12 @@ const schema = v.pipe(
 )
 
 export const RegisterForm = () => {
+  const [formError, setFormError] = useState<boolean>(false)
+  const registerMutation = useRegisterUser({
+    onError: () => {
+      setFormError(true)
+    },
+  })
   const {
     register,
     formState: { errors },
@@ -46,7 +54,12 @@ export const RegisterForm = () => {
   })
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
+    setFormError(false)
+    registerMutation.mutate({
+      email: data.email,
+      password: data.password,
+      password_confirmation: data.repeatPassword,
+    })
   }
 
   return (
@@ -65,6 +78,7 @@ export const RegisterForm = () => {
           autoComplete={'email'}
           error={errors.email?.message}
           wrapperClassName={'w-full'}
+          disabled={registerMutation.isPending}
         />
         <PasswordInput
           placeholder={'Create a password'}
@@ -72,6 +86,7 @@ export const RegisterForm = () => {
           autoComplete={'new-password'}
           error={errors.password?.message}
           wrapperClassName={'w-full'}
+          disabled={registerMutation.isPending}
         />
         <PasswordInput
           placeholder={'Repeat password'}
@@ -79,11 +94,17 @@ export const RegisterForm = () => {
           autoComplete={'new-password'}
           error={errors.repeatPassword?.message}
           wrapperClassName={'w-full'}
+          disabled={registerMutation.isPending}
         />
+        {formError && (
+          <p className={'text-error mt-1'}>Oops! Something went wrong while submitting the form.</p>
+        )}
       </div>
 
       <div className={'flex flex-col gap-4 pt-5 md:items-start'}>
-        <UIButton type={'submit'}>Register</UIButton>
+        <UIButton type={'submit'} disabled={registerMutation.isPending}>
+          Register
+        </UIButton>
         <p>
           By clicking the “Register” button, you agree to the{' '}
           <Link

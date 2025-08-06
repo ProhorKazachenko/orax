@@ -5,11 +5,14 @@ import { useLocale, useTranslations } from 'next-intl'
 import { MobileMenu } from '@/components/MobileMenu/MobileMenu'
 import clsx from 'clsx'
 import { Link, usePathname } from '@/i18n/navigation'
+import { useSelfData } from '@/lib/api/user/user.queries'
+import { IconUser } from '@/components/icons/IconUser'
 
 export const Header: FC = () => {
   const t = useTranslations('Header')
   const locale = useLocale()
   const pathname = usePathname()
+  const { data: user } = useSelfData()
   return (
     <>
       <header className={'sticky top-0 left-0 z-40 w-full py-4 backdrop-blur-2xl'}>
@@ -36,9 +39,19 @@ export const Header: FC = () => {
             <Link href={'/market'} className={clsx({ '!text-accent': pathname === '/market' })}>
               {t('solutions')}
             </Link>
-            <Link href={'/auth'} className={clsx({ '!text-accent': pathname.includes('/auth') })}>
-              Authorization
-            </Link>
+            {!user && (
+              <Link href={'/auth'} className={clsx({ '!text-accent': pathname.includes('/auth') })}>
+                Authorization
+              </Link>
+            )}
+            {user && (
+              <Link
+                href={'/account'}
+                className={clsx({ '!text-accent': pathname.includes('/account') })}
+              >
+                <IconUser />
+              </Link>
+            )}
           </nav>
           <div className={'flex items-center gap-2 lg:hidden'}>
             <MobileMenu />

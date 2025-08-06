@@ -25,7 +25,9 @@ export const PasswordInput: FC<Props> = ({ placeholder, wrapperClassName, error,
         />
         <button
           type={'button'}
-          className={'absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer'}
+          className={clsx('absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer', {
+            hidden: props.disabled,
+          })}
           onClick={() => setShowPassword(!showPassword)}
         >
           {showPassword ? <IconEyeSlash className={'size-6'} /> : <IconEye className={'size-6'} />}

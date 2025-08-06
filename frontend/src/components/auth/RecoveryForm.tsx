@@ -4,6 +4,10 @@ import { UIButton } from '@/components/ui/UIButton'
 import { valibotResolver } from '@hookform/resolvers/valibot'
 import { useForm } from 'react-hook-form'
 import * as v from 'valibot'
+import { useResetPassword } from '@/lib/api/user/user.mutations'
+import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 
 interface FormData {
   password: string
@@ -33,6 +37,19 @@ const schema = v.pipe(
 )
 
 export const RecoveryForm = () => {
+  const [formError, setFormError] = useState<string | null>(null)
+  const params = useSearchParams()
+  const router = useRouter()
+
+  const resetMutation = useResetPassword({
+    onError: (error) => {
+      if (error.status === 410) {
+        setFormError('This link has expired')
+        return
+      }
+      setFormError('Oops! Something went wrong while submitting the form.')
+    },
+  })
   const {
     register,
     formState: { errors },
@@ -42,9 +59,17 @@ export const RecoveryForm = () => {
   })
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
+    resetMutation.mutate({
+      token: params.get('token') as string,
+      password: data.password,
+      password_confirmation: data.repeatPassword,
+    })
   }
-
+  useEffect(() => {
+    if (!params.has('token')) {
+      router.push('/auth')
+    }
+  }, [params, router])
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -70,6 +95,7 @@ export const RecoveryForm = () => {
           error={errors.repeatPassword?.message}
           wrapperClassName={'w-full'}
         />
+        {formError && <p className={'text-error mt-1'}>{formError}</p>}
       </div>
 
       <div className={'flex flex-col gap-4 pt-5 md:items-start'}>
