@@ -21,6 +21,10 @@ const schema = v.pipe(
       v.string(),
       v.nonEmpty('Incorrect password'),
       v.minLength(8, 'Incorrect password'),
+      v.regex(/[A-Z]/, 'At least one capital letter'),
+      v.regex(/[a-z]/, 'At least one lowercase letter'),
+      v.regex(/[0-9]/, 'At least one number'),
+      v.regex(/[^A-Za-z0-9]/, 'At least one special character'),
     ),
     repeatPassword: v.pipe(
       v.string(),
