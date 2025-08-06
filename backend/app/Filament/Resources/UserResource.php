@@ -71,7 +71,12 @@ class UserResource extends Resource
                     ->modalCancelActionLabel('Закрыть'),
             ])
             ->bulkActions([
-                DeleteBulkAction::make(),
+                DeleteBulkAction::make()
+                    ->label('Удалить пользователей')
+                    ->modalHeading('Удалить пользователей')
+                    ->modalSubmitAction(false)
+                    ->modalCancelActionLabel('Закрыть')
+                    ->modalSubmitActionLabel('Удалить'),
             ]);
     }
 
