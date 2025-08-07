@@ -83,8 +83,8 @@ export const RecoveryForm = () => {
         Create <br className={'max-lg:hidden'} /> a password
       </h2>
       <p>
-        Create a new password of at least 8 characters, including a capital letter, a number and a
-        special character
+        Create a new password of at least 8 characters, including a capital and lowercase letter, a
+        number and a special character
       </p>
 
       <div className='flex flex-col items-stretch gap-4 pt-3 md:items-start'>
