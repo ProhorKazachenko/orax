@@ -103,6 +103,7 @@ class StrategiesRelationManager extends RelationManager
                     ->modalCancelActionLabel('Отмена')
                     ->modalWidth('sm')
                     ->modalHeading('Редактирование стратегии')
+                    ->successNotificationTitle('Стратегия успешно обновлена')
             ])
             ->bulkActions([]);
     }
