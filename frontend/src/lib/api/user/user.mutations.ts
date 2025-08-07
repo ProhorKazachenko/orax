@@ -1,4 +1,4 @@
-import { useMutation, UseMutationOptions } from '@tanstack/react-query'
+import { useMutation, UseMutationOptions, useQueryClient } from '@tanstack/react-query'
 import api from '@/lib/api/apiClient'
 import { AxiosError } from 'axios'
 import {
@@ -11,7 +11,7 @@ import {
   IRegisterResponse,
   IUpdatePhoneRequest,
 } from '@/lib/api/user/user.types'
-import { setCookie } from 'cookies-next/client'
+import { setCookie, deleteCookie } from 'cookies-next/client'
 import { useRouter } from '@/i18n/navigation'
 
 export const useRegisterUser = (
@@ -83,7 +83,22 @@ export const useUpdatePhone = (
 ) => {
   return useMutation({
     mutationKey: ['updatePhone'],
-    mutationFn: (data) => api.post('/users/update-phone', data).then(),
+    mutationFn: (data) => api.post('/users/update-phone', data),
     ...options,
+  })
+}
+
+export const useLogoutUser = () => {
+  const router = useRouter()
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationKey: ['logoutUser'],
+    mutationFn: () => api.post('/users/auth/logout'),
+    onSuccess: () => {
+      router.push('/auth/login')
+      deleteCookie('token')
+      queryClient.removeQueries({ queryKey: ['self'] })
+      router.refresh()
+    },
   })
 }
