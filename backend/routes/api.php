@@ -30,5 +30,7 @@ Route::prefix('users')->group(function () {
             ->name('auth.password.email');
         Route::post('/password/reset', [AuthController::class, 'resetPassword'])
             ->name('auth.password.reset');
+        Route::post('/logout', [AuthController::class, 'logout'])
+            ->name('auth.logout');
     });
 });

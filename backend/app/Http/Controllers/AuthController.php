@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -53,6 +54,13 @@ class AuthController extends Controller
             'message' => 'Вход выполнен успешно',
             'token' => $token,
         ], 200);
+    }
+
+    public function logout()
+    {
+        Auth::user()->tokens()->delete();
+
+        return response()->json(['message' => 'Выход выполнен успешно'], 200);
     }
 
     public function emailForResetPassword(EmailOnResetPasswordRequest $request)
