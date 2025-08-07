@@ -30,11 +30,11 @@ class UserController extends Controller
         $strategy = $user->strategy;
         $remaining_term = 0;
 
-        if (now() > $strategy->start_of_deposit) {
+        if (now() >= $strategy->start_of_deposit) {
             $remaining_term = intval(now()->diffInDays($strategy->remaining_term));
         } else if (now() < $strategy->start_of_deposit) {
             $remaining_term = intval(Carbon::parse($strategy->start_of_deposit)->diffInDays(now()));
-        } else {
+        } else if ($strategy->remaining_term <= now()) {
             $remaining_term = 0;
         }
 
