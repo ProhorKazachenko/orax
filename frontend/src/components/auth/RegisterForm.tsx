@@ -72,7 +72,10 @@ export const RegisterForm = () => {
       className='flex flex-col gap-3 md:w-2/3 lg:w-1/2 xl:w-2/5'
     >
       <h2>Register</h2>
-      <p>Enter your email and create a password of at least 8 characters</p>
+      <p>
+        Enter your email and create a password of at least 8 characters, including a capital letter,
+        a number and a special character
+      </p>
 
       <div className='flex flex-col items-stretch gap-4 pt-3 md:items-start'>
         <UIInput
