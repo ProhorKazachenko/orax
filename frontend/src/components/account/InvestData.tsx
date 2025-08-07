@@ -16,10 +16,10 @@ export const InvestData = () => {
   const [curency, setCurrency] = useState('USDT')
   return (
     <div className={'mt-8 flex flex-1 flex-col gap-8 sm:mt-10 md:mt-16'}>
-      <div className='flex flex-col items-stretch gap-3 md:flex-row md:gap-4'>
-        <Card className={'flex-1/2'}>
+      <div className='flex flex-col items-stretch gap-3 md:flex-row md:flex-wrap md:gap-4'>
+        <Card className={'md:flex-1/3'}>
           <h4>{data?.strategy_name}</h4>
-          <div className='my-6 flex items-end gap-2'>
+          <div className='my-6 flex flex-wrap items-end gap-2'>
             <p className={'h1 font-heading'}>{data?.deposit?.toLocaleString('ru-RU')}</p>
             <UIDropdown
               options={curencyOptions}
@@ -33,11 +33,11 @@ export const InvestData = () => {
         <Card
           green
           className={
-            'flex-1/2 bg-[url("/images/study/picStudyCasesFull.png")] bg-contain bg-[calc(100%+100px)_center] bg-no-repeat lg:bg-[calc(100%+140px)_center]'
+            'bg-[url("/images/study/picStudyCasesFull.png")] bg-contain bg-[calc(100%+100px)_center] bg-no-repeat md:flex-1/3 lg:bg-[calc(100%+140px)_center]'
           }
         >
           <h4>Income</h4>
-          <div className='my-6 flex items-end gap-2'>
+          <div className='my-6 flex flex-wrap items-end gap-2'>
             <p className={'h1 font-heading'}>{data?.income?.toLocaleString('ru-RU')}</p>
             <UIDropdown
               options={curencyOptions}

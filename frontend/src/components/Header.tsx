@@ -4,15 +4,38 @@ import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { MobileMenu } from '@/components/MobileMenu/MobileMenu'
 import clsx from 'clsx'
-import { Link, usePathname } from '@/i18n/navigation'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { useSelfData } from '@/lib/api/user/user.queries'
 import { IconUser } from '@/components/icons/IconUser'
+import { UIDropdown } from '@/components/ui/UIDropdown'
 
 export const Header: FC = () => {
   const t = useTranslations('Header')
   const locale = useLocale()
   const pathname = usePathname()
   const { data: user } = useSelfData()
+  const router = useRouter()
+  const dropdownLinks = [
+    {
+      label: t('management'),
+      value: '/',
+    },
+    {
+      label: 'Market Neutral Strategy B1',
+      value: '/strategies/b1',
+    },
+    {
+      label: 'Structured Investment Product S1',
+      value: '/strategies/s1',
+    },
+    {
+      label: 'Investment Product A1',
+      value: '/strategies/a1',
+    },
+  ]
+  const handleDropdownChange = (value: string) => {
+    router.push(value)
+  }
   return (
     <>
       <header className={'sticky top-0 left-0 z-40 w-full py-4 backdrop-blur-2xl'}>
@@ -33,9 +56,15 @@ export const Header: FC = () => {
               'lg:flex': locale === 'en',
             })}
           >
-            <Link href={'/'} className={clsx({ '!text-accent': pathname === '/' })}>
-              {t('management')}
-            </Link>
+            {/*<Link href={'/'} className={clsx({ '!text-accent': pathname === '/' })}>*/}
+            {/*  {t('management')}*/}
+            {/*</Link>*/}
+            <UIDropdown
+              options={dropdownLinks}
+              label={'Services'}
+              onChangeAction={handleDropdownChange}
+              active={pathname}
+            />
             <Link href={'/market'} className={clsx({ '!text-accent': pathname === '/market' })}>
               {t('solutions')}
             </Link>

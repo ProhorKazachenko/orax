@@ -51,7 +51,7 @@ export const MobileMenu = () => {
           >
             <div
               className={
-                "className='xs:bg-[right_100px] xxl:bg-size-[800px] xxl:bg-[right_top] xl:bg-size-[65%]' h-full w-full bg-[url(/picHero.png)] bg-contain bg-[right_250px] bg-no-repeat sm:bg-size-[90%] sm:bg-[130px_50px] md:bg-contain md:bg-[right_top] lg:bg-size-[80%]"
+                'h-full w-full bg-[url(/picHero.png)] bg-contain bg-[right_calc(100%+10px)] bg-no-repeat'
               }
             >
               <div className={'container flex flex-col gap-4 font-extrabold md:gap-8'}>
@@ -61,6 +61,27 @@ export const MobileMenu = () => {
                   className={clsx({ '!text-accent': pathname === '/' })}
                 >
                   {t('management')}
+                </Link>
+                <Link
+                  href={'/strategies/b1'}
+                  onClick={() => setIsOpen(false)}
+                  className={clsx({ '!text-accent': pathname === '/strategies/b1' })}
+                >
+                  Market Neutral Strategy B1
+                </Link>
+                <Link
+                  href={'/strategies/s1'}
+                  onClick={() => setIsOpen(false)}
+                  className={clsx({ '!text-accent': pathname === '/strategies/s1' })}
+                >
+                  Structured Investment Product S1
+                </Link>
+                <Link
+                  href={'/strategies/a1'}
+                  onClick={() => setIsOpen(false)}
+                  className={clsx({ '!text-accent': pathname === '/strategies/a1' })}
+                >
+                  Investment Product A1
                 </Link>
                 <Link
                   href={'/market'}
@@ -84,7 +105,7 @@ export const MobileMenu = () => {
                     className={clsx({ '!text-accent': pathname.includes('/account') })}
                     onClick={() => setIsOpen(false)}
                   >
-                    Authorization
+                    Account
                   </Link>
                 )}
               </div>
