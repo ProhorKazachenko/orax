@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\UserResource\RelationManagers;
 
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Form;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
@@ -46,13 +46,22 @@ class StrategiesRelationManager extends RelationManager
                 ->maxValue(1000000000)
                 ->required()
                 ->columnSpanFull(),
-            DateTimePicker::make('start_of_deposit')
+            DatePicker::make('start_of_deposit')
                 ->label('Начало вклада')
+                ->prefixIcon('heroicon-m-calendar-days')
+                ->prefixIconColor('primary')
+                ->placeholder('Выберите дату')
+                ->native(false)
                 ->required()
                 ->columnSpanFull()
                 ->live(),
-            DateTimePicker::make('remaining_term')
+            DatePicker::make('remaining_term')
                 ->label('Остаток срока')
+                ->native(false)
+                ->maxDate(now()->addYears(10))
+                ->prefixIcon('heroicon-m-calendar-days')
+                ->prefixIconColor('primary')
+                ->placeholder('Выберите дату')
                 ->required()
                 ->columnSpanFull()
                 ->minDate(now())
@@ -79,8 +88,8 @@ class StrategiesRelationManager extends RelationManager
             TextColumn::make('name')->label('Название'),
             TextColumn::make('deposit')->numeric(2)->label('Сумма'),
             TextColumn::make('income')->numeric(2)->label('Доход'),
-            TextColumn::make('start_of_deposit')->dateTime('d.m.Y H:i')->label('Начало вклада'),
-            TextColumn::make('remaining_term')->dateTime('d.m.Y H:i')->label('Остаток срока'),
+            TextColumn::make('start_of_deposit')->date('d.m.Y')->label('Начало вклада'),
+            TextColumn::make('remaining_term')->date('d.m.Y')->label('Остаток срока'),
             TextColumn::make('contract_signed')
                 ->label('Договор подписан')
                 ->formatStateUsing(fn($state) => $state ? 'Да' : 'Нет'),
