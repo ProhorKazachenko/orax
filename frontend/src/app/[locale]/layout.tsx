@@ -26,9 +26,12 @@ const manrope = Manrope({
   variable: '--font-manrope',
 })
 
+const description =
+  'ORAX CORPORATION LLC - offers flexible solutions for businesses and investors worldwide. We specialize in asset management, financial administration, and consulting, providing a high level of confidentiality and a personalized approach to each client.'
+
 export const metadata: Metadata = {
   title: 'ORAX CORPORATION',
-  description: 'ORAX CORPORATION',
+  description: description,
   metadataBase: new URL(process.env.NEXT_PUBLIC_HOST as string),
   icons: {
     icon: '/favicon.ico',
@@ -36,12 +39,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'ORAX CORPORATION',
-    description: 'ORAX CORPORATION',
+    description: description,
     images: '/OpenGraph.png',
   },
   twitter: {
     title: 'ORAX CORPORATION',
-    description: 'ORAX CORPORATION',
+    description: description,
     images: '/OpenGraph.png',
     card: 'summary_large_image',
   },
