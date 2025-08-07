@@ -30,20 +30,20 @@ class StrategiesRelationManager extends RelationManager
                 ])
                 ->required()
                 ->columnSpanFull(),
+            TextInput::make('deposit')
+                ->label('Сумма')
+                ->prefix('$')
+                ->minValue(0)
+                ->maxValue(1000000000)
+                ->numeric()
+                ->required()
+                ->columnSpanFull(),
             TextInput::make('income')
                 ->label('Доход')
                 ->prefix('$')
                 ->numeric()
                 ->minValue(0)
                 ->maxValue(1000000000)
-                ->required()
-                ->columnSpanFull(),
-            TextInput::make('deposit')
-                ->label('Депозит')
-                ->prefix('$')
-                ->minValue(0)
-                ->maxValue(1000000000)
-                ->numeric()
                 ->required()
                 ->columnSpanFull(),
             DateTimePicker::make('start_of_deposit')
@@ -78,7 +78,7 @@ class StrategiesRelationManager extends RelationManager
         return $table->columns([
             TextColumn::make('name')->label('Название'),
             TextColumn::make('income')->numeric(2)->label('Доход'),
-            TextColumn::make('deposit')->numeric(2)->label('Депозит'),
+            TextColumn::make('deposit')->numeric(2)->label('Сумма'),
             TextColumn::make('start_of_deposit')->dateTime('d.m.Y H:i')->label('Начало вклада'),
             TextColumn::make('remaining_term')->dateTime('d.m.Y H:i')->label('Остаток срока'),
             TextColumn::make('contract_signed')

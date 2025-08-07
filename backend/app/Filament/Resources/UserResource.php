@@ -44,10 +44,10 @@ class UserResource extends Resource
                     ->label('Телефон'),
                 TextColumn::make('strategy.name')
                     ->label('Стратегия'),
+                TextColumn::make('strategy.deposit')
+                    ->label('Сумма'),
                 TextColumn::make('strategy.income')
                     ->label('Доход'),
-                TextColumn::make('strategy.deposit')
-                    ->label('Депозит'),
                 TextColumn::make('strategy.contract_signed')
                     ->label('Договор подписан')
                     ->formatStateUsing(fn($state) => $state ? 'Да' : 'Нет')
