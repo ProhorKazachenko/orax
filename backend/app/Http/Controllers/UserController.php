@@ -33,9 +33,9 @@ class UserController extends Controller
         if (now() > $strategy->remaining_term) {
             $remaining_term = 0;
         } else if (now() >= $strategy->start_of_deposit) {
-            $remaining_term = intval(now()->diffInDays($strategy->remaining_term));
+            $remaining_term = intval(now()->startOfDay()->diffInDays(Carbon::parse($strategy->remaining_term)->startOfDay()));
         } else {
-            $remaining_term = intval(Carbon::parse($strategy->start_of_deposit)->diffInDays($strategy->remaining_term));
+            $remaining_term = intval(Carbon::parse($strategy->start_of_deposit)->startOfDay()->diffInDays(Carbon::parse($strategy->remaining_term)->startOfDay()));
         }
 
         $is_reviewed = Cache::has('user_reviewed_' . $user->id);
