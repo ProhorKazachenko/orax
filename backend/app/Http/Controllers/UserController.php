@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\User\UpdatePhoneRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -22,11 +23,21 @@ class UserController extends Controller
         return response()->json(['message' => 'Пользователь успешно удален'], 200);
     }
 
+    //use normal conventions if project grows
     public function show()
     {
         $user = Auth::user();
         $strategy = $user->strategy;
-        $remaining_term = intval(now()->diffInDays($strategy->remaining_term));
+        $remaining_term = 0;
+
+        if (now() > $strategy->remaining_term) {
+            $remaining_term = intval(now()->diffInDays($strategy->remaining_term));
+        } else if (now() < $strategy->start_of_deposit) {
+            $remaining_term = intval(Carbon::parse($strategy->start_of_deposit)->diffInDays($strategy->remaining_term));
+        } else {
+            $remaining_term = 0;
+        }
+
         $is_reviewed = Cache::has('user_reviewed_' . $user->id);
 
         return response()->json([
