@@ -7,7 +7,7 @@ import { HowMakeMoney } from '@/components/pages/mainpage/HowMakeMoney'
 
 export default function Home() {
   return (
-    <div className='xs:bg-[right_100px] xxl:bg-size-[800px] xxl:bg-[right_top] bg-[url(/picHero.png)] bg-contain bg-[right_250px] bg-no-repeat sm:bg-size-[90%] sm:bg-[130px_50px] md:bg-contain md:bg-[right_top] lg:bg-size-[80%] xl:bg-size-[65%]'>
+    <div className='xs:bg-[right_100px] ixs:bg-[right_150px] xxl:bg-size-[800px] xxl:bg-[right_top] bg-[url(/picHero.png)] bg-contain bg-[right_250px] bg-no-repeat sm:bg-size-[90%] sm:bg-[130px_100px] md:bg-contain md:bg-[right_top] lg:bg-size-[80%] xl:bg-size-[65%]'>
       <MainHero />
       <Strategies />
       <PortfolioManagement />
